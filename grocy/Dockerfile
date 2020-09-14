@@ -8,7 +8,8 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # Setup base
 # hadolint ignore=DL3003
 RUN \
-    apk add --no-cache \
+    apk update \
+    && apk add --no-cache \
         nginx=1.18.0-r0 \
         php7-fpm=7.3.21-r0 \
         php7-gd=7.3.21-r0 \
