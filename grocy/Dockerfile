@@ -7,8 +7,6 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base
 # hadolint ignore=DL3003
-RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
-
 RUN \
     apk add --no-cache \
         nginx=1.18.0-r0 \
