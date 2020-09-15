@@ -1,7 +1,7 @@
 {
-  "name": "Grocy Preview",
+  "name": "Grocy",
   "version": "v20200914.3",
-  "slug": "grocy_preview",
+  "slug": "grocy",
   "description": "ERP beyond your fridge! A groceries & household management solution for your home",
   "url": "https://github.com/hassio-addons/addon-grocy",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:80]",

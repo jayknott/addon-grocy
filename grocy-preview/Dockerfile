@@ -71,13 +71,13 @@ ARG BUILD_VERSION
 
 # Labels
 LABEL \
-    io.hass.name="Grocy Preview" \
+    io.hass.name="Grocy" \
     io.hass.description="ERP beyond your fridge! A groceries & household management solution for your home" \
     io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="addon" \
     io.hass.version=${BUILD_VERSION} \
     maintainer="Franck Nijhof <frenck@addons.community>" \
-    org.opencontainers.image.title="Grocy Preview" \
+    org.opencontainers.image.title="Grocy" \
     org.opencontainers.image.description="ERP beyond your fridge! A groceries & household management solution for your home" \
     org.opencontainers.image.vendor="Home Assistant Community Add-ons" \
     org.opencontainers.image.authors="Franck Nijhof <frenck@addons.community>" \
