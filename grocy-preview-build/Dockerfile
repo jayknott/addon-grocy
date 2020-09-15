@@ -1,6 +1,6 @@
-ARG BUILD_FROM=hassioaddons/base-aarch64:8.0.1
+ARG BUILD_FROM=hassioaddons/base:8.0.1
 # hadolint ignore=DL3006
-FROM hassioaddons/base-aarch64:8.0.1
+FROM ${BUILD_FROM}
 
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
@@ -8,7 +8,8 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # Setup base
 # hadolint ignore=DL3003
 RUN \
-    apk add --no-cache \
+    apk update \
+    && apk add --no-cache \
         nginx=1.18.0-r0 \
         php7-fpm=7.3.22-r0 \
         php7-gd=7.3.22-r0 \
@@ -63,17 +64,20 @@ RUN \
 COPY rootfs /
 
 # Build arguments
-
+ARG BUILD_ARCH
+ARG BUILD_DATE
+ARG BUILD_REF
+ARG BUILD_VERSION
 
 # Labels
 LABEL \
-    io.hass.name="Grocy Preview" \
+    io.hass.name="Grocy" \
     io.hass.description="ERP beyond your fridge! A groceries & household management solution for your home" \
-    io.hass.arch="aarch64" \
+    io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="addon" \
-    io.hass.version=20200914.3 \
+    io.hass.version=${BUILD_VERSION} \
     maintainer="Franck Nijhof <frenck@addons.community>" \
-    org.opencontainers.image.title="Grocy Preview" \
+    org.opencontainers.image.title="Grocy" \
     org.opencontainers.image.description="ERP beyond your fridge! A groceries & household management solution for your home" \
     org.opencontainers.image.vendor="Home Assistant Community Add-ons" \
     org.opencontainers.image.authors="Franck Nijhof <frenck@addons.community>" \
@@ -81,6 +85,6 @@ LABEL \
     org.opencontainers.image.url="https://addons.community" \
     org.opencontainers.image.source="https://github.com/hassio-addons/addon-grocy" \
     org.opencontainers.image.documentation="https://github.com/hassio-addons/addon-grocy/blob/master/README.md" \
-    org.opencontainers.image.created=2020-09-14 \
-    org.opencontainers.image.revision=1 \
-    org.opencontainers.image.version=20200914.3
+    org.opencontainers.image.created=${BUILD_DATE} \
+    org.opencontainers.image.revision=${BUILD_REF} \
+    org.opencontainers.image.version=${BUILD_VERSION}
