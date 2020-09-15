@@ -1,6 +1,6 @@
-ARG BUILD_FROM=hassioaddons/base-aarch64:8.0.1
+ARG BUILD_FROM=hassioaddons/base:8.0.1
 # hadolint ignore=DL3006
-FROM hassioaddons/base-aarch64:8.0.1
+FROM ${BUILD_FROM}
 
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
@@ -73,9 +73,9 @@ ARG BUILD_VERSION
 LABEL \
     io.hass.name="Grocy Preview" \
     io.hass.description="ERP beyond your fridge! A groceries & household management solution for your home" \
-    io.hass.arch="aarch64" \
+    io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="addon" \
-    io.hass.version="2020-09-14.2" \
+    io.hass.version=${BUILD_VERSION} \
     maintainer="Franck Nijhof <frenck@addons.community>" \
     org.opencontainers.image.title="Grocy Preview" \
     org.opencontainers.image.description="ERP beyond your fridge! A groceries & household management solution for your home" \
@@ -85,6 +85,6 @@ LABEL \
     org.opencontainers.image.url="https://addons.community" \
     org.opencontainers.image.source="https://github.com/hassio-addons/addon-grocy" \
     org.opencontainers.image.documentation="https://github.com/hassio-addons/addon-grocy/blob/master/README.md" \
-    org.opencontainers.image.created="2020-09-14" \
-    org.opencontainers.image.revision="0" \
-    org.opencontainers.image.version="2020-09-14.2"
+    org.opencontainers.image.created=${BUILD_DATE} \
+    org.opencontainers.image.revision=${BUILD_REF} \
+    org.opencontainers.image.version=${BUILD_VERSION}
