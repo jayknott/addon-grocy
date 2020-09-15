@@ -76,5 +76,6 @@
     "ssl": "bool",
     "certfile": "str",
     "keyfile": "str"
-  }
+  },
+  "image": "jayknott/grocy-{arch}"
 }
