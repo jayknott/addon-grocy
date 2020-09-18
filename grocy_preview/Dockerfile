@@ -71,7 +71,7 @@ ARG BUILD_VERSION
 
 # Labels
 LABEL \
-    io.hass.name="Grocy" \
+    io.hass.name="Grocy Preview" \
     io.hass.description="ERP beyond your fridge! A groceries & household management solution for your home" \
     io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="addon" \
